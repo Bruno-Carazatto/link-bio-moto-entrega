@@ -1,0 +1,336 @@
+:root {
+  --bg-main: #05070d;
+  --bg-card: #0b101a;
+  --bg-soft: #151a24;
+  --blue-neon: #005bff;
+  --blue-glow: #00a3ff;
+  --text-main: #f5f7fa;
+  --text-muted: #9aa4b2;
+  --border-soft: rgba(255, 255, 255, 0.12);
+
+  --font-title: "Space Grotesk", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top, rgba(0, 91, 255, 0.35), transparent 35%),
+    linear-gradient(180deg, #05070d 0%, #090d14 100%);
+}
+
+a {
+  text-decoration: none;
+}
+
+.bio-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-card {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  overflow: hidden;
+  padding: 24px 18px;
+  border: 1px solid var(--border-soft);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(5, 7, 13, 0.58), rgba(5, 7, 13, 0.88)),
+    url("../imagens/cartao-referencia.jpeg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 7, 13, 0.25), rgba(5, 7, 13, 0.72)),
+    radial-gradient(circle at top right, rgba(0, 163, 255, 0.22), transparent 35%);
+  z-index: 0;
+}
+
+.hero-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-glow {
+  position: absolute;
+  top: -90px;
+  right: -90px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: var(--blue-glow);
+  filter: blur(70px);
+  opacity: 0.55;
+}
+
+.brand-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.brand-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--blue-neon), var(--blue-glow));
+  box-shadow: 0 12px 34px rgba(0, 91, 255, 0.45);
+}
+
+.brand-icon i {
+  font-size: 1.45rem;
+}
+
+.brand-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-glow);
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: clamp(1.65rem, 7vw, 2.3rem);
+  line-height: 1.05;
+}
+
+.profile-box {
+  padding: 78px 18px 24px;
+  margin-bottom: 22px;
+  border: 1px solid var(--border-soft);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(16px);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  margin: -75px auto 18px;
+  padding: 4px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 91, 255, 0.95),
+    rgba(0, 163, 255, 0.55)
+  );
+
+  box-shadow:
+    0 10px 35px rgba(0, 91, 255, 0.35),
+    0 0 25px rgba(0, 163, 255, 0.25);
+
+  position: relative;
+  z-index: 3;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  background: #05070d;
+}
+
+.profile-tag {
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.action-list {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.action-btn {
+  min-height: 58px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 18px;
+  color: var(--text-main);
+  font-weight: 700;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.35s ease;
+}
+
+.action-btn span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-btn:hover {
+  color: var(--text-main);
+  transform: translateY(-3px) scale(1.01);
+}
+
+.whatsapp-btn {
+  background: linear-gradient(135deg, #17c964, #0ca84f);
+  box-shadow: 0 14px 34px rgba(23, 201, 100, 0.28);
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--blue-neon), var(--blue-glow));
+  box-shadow: 0 14px 34px rgba(0, 91, 255, 0.38);
+}
+
+.instagram-btn {
+  background: linear-gradient(
+    135deg,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f77737,
+    #fcaf45
+  );
+
+  border: none;
+
+  box-shadow:
+    0 14px 34px rgba(225, 48, 108, 0.28),
+    0 0 18px rgba(131, 58, 180, 0.22);
+}
+
+.instagram-btn:hover {
+  box-shadow:
+    0 18px 40px rgba(225, 48, 108, 0.35),
+    0 0 24px rgba(131, 58, 180, 0.28);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.trust-item {
+  min-height: 78px;
+  padding: 12px 6px;
+  display: grid;
+  place-items: center;
+  gap: 7px;
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.045);
+  text-align: center;
+}
+
+.trust-item i {
+  color: var(--blue-glow);
+  font-size: 1.1rem;
+}
+
+.trust-item span {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.bio-footer {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.bio-footer p {
+  margin-bottom: 2px;
+  font-size: 0.86rem;
+}
+
+.bio-footer small {
+  font-size: 0.74rem;
+}
+
+/* Smartphones pequenos */
+@media (max-width: 360px) {
+  .bio-page {
+    padding: 12px;
+    align-items: flex-start;
+  }
+
+  .hero-card {
+    padding: 20px 14px;
+    border-radius: 24px;
+  }
+
+  .brand-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .action-btn {
+    min-height: 54px;
+    font-size: 0.92rem;
+  }
+
+  .trust-grid {
+    gap: 7px;
+  }
+
+  .trust-item {
+    min-height: 70px;
+  }
+}
+
+/* Telas maiores */
+@media (min-width: 768px) {
+  .hero-card {
+    padding: 30px 24px;
+  }
+}
+
+.hero-card {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-card.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.action-btn.is-clicked {
+  transform: scale(0.97);
+}
